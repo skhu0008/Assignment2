@@ -8,7 +8,7 @@ h1 {
 
 
 body {
-    background-color: slateblue;
+    background-color: blue;
 }
 
 .page {
@@ -26,7 +26,7 @@ body {
 .description h2,
 h1 {
     margin-top: 10px;
-    width: 850px;
+
 }
 
 .description-right {
