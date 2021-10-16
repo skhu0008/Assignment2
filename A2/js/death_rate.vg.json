@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Fatality rates of the Eight-Thousanders",
+      "layer": [{
+        "data": {"url":"https://raw.githubusercontent.com/skhu0008/Assignment2/main/data/ascents_deaths.csv"
+        },
+        "layer": [{
+          "mark": "bar",
+          "encoding": {
+            "x": {"field": "Mountain", "type": "ordinal", "axis": {"labelAngle": -90}, "sort": ["Annapurna I", "K2", "Nanga Parbat", "Dhaulagiri I", "Kangchenjunga", "Manaslu", "Gasherbrum I", "Makalu", "Shishapangma", "Broad Peak", "Everest", "Lhotse", "Gasherbrum II", "Cho Oyu"]},
+            "y": {"field": "death_rate", "type": "quantitative"}
+          }
+        }, {
+          "mark": "bar",
+          "transform": [
+            {"filter": "datum.death_rate >= 11.37"},
+            {"calculate": "11.37", "as": "baseline"}
+          ],
+          "encoding": {
+            "x": {"field": "Mountain", "type": "ordinal", "sort": ["Annapurna I", "K2", "Nanga Parbat", "Dhaulagiri I", "Kangchenjunga", "Manaslu", "Gasherbrum I", "Makalu", "Shishapangma", "Broad Peak", "Everest", "Lhotse", "Gasherbrum II", "Cho Oyu"]},
+            "y": {"aggregate": "sum", "field": "death_rate", "type": "quantitative", "title": "Death Rate (% of attempts)"},
+            "y2": {"field": "baseline"},
+            "color": {"value": "#e45755"}
+          }
+        }
+      ]}, {
+        "data": {
+           "values": [{}]
+        },
+        "encoding": {
+          "y": {"datum": 11.37}
+        },
+        "layer": [{
+          "mark": "rule"
+        }, {
+          "mark": {"color": "black",
+            "type": "text",
+            "align": "right",
+            "baseline":"bottom",
+            "dx": -20,
+            "dy": -5,
+            "x": "width",
+            "text": "11.4% Avg. Death Rate"
+          }
+        }]
+      }
+    ]
+  }
+  
