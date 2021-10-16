@@ -47,7 +47,7 @@
           <div id="vis2"  class="vis-container"></div>
         </div>
         <div class="pure-u-1-3">
-          <div class="description description-right">
+          <div class="description description">
             <h2>Nations who've conquered the Eight-Thousanders</h2>
             <p>Only 44 people who have conquered all 14 Eight-Thousanders. We can see the distribution of where these climbers have come from in this visualisation.</p>
           </div>
@@ -69,6 +69,20 @@
       </div>
     </div>  
 
+   <br>
+   
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description">
+            <h2>Death Rates of the Eight-Thousanders</h2>
+            <p>While Everest has been deemed as the most dangerous peak in the world, it is relatively safer compared to the other Eight-Thousanders. Over 31% of those who attempt to summit Annapurna I, don't make it down...</p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis4" class="vis-container"></div>
+      </div>
+    </div>  
+
     
 
   </div> <!-- end page -->
@@ -77,6 +91,7 @@
   var specVis1 = "js/altitude_map.vg.json";
   var specVis2 = "js/choropleth_map.vg.json";
   var specVis3 = "js/cost_graph.vg.json";
+  var specVis4 = "js/death_rate.vg.json";
   vegaEmbed('#vis1', specVis1, {"actions": false});
   
   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
@@ -84,6 +99,10 @@
   }).catch(console.error);
   
   vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
