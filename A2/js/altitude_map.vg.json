@@ -1,8 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "height": 400,
-    "title": "Location and Height of the 8000ers",    
+    "height": 300,   
     "projection": {
           "type": "equirectangular",
           "center": { "expr": "center_to" },
@@ -70,11 +69,12 @@
         "size": {"expr": "size"},
         "shape": {"expr": "shape"},
         "color":"darkblue",
-        "tooltip": {"content": "data"}},
+        "tooltip": {"field": "Mountain"}},
               "encoding": {
           "latitude": {"field": "latitude"},
+          "tooltip": [{"field": "Mountain", "type": "ordinal"}, {"field": "Height", "type": "quantitative"}],
           "longitude": {"field": "longitude"},
-          "color": {"condition": {"param": "center_to", "field": "Height", "type": "quantitative"}, "value": "grey"}
+          "color": {"condition": {"param": "center_to", "title": "Height (in metres)", "field": "Height", "type": "quantitative"}, "value": "grey"}
           }
         }
     ]
