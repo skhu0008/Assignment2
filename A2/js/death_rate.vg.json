@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
     "description": "Fatality rates of the Eight-Thousanders",
       "layer": [{
         "data": {"url":"https://raw.githubusercontent.com/skhu0008/Assignment2/main/data/ascents_deaths.csv"
