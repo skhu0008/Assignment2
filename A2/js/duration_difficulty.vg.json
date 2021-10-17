@@ -4,17 +4,17 @@
   "data": {"url": "https://raw.githubusercontent.com/skhu0008/Assignment2/main/data/peaks_data.csv"},
   "params": [
     {
-      "name": "Mountain",
+      "name": "Peak",
       "select": {"type":"point", "fields": ["Mountain"]},
-      "bind": {"input": "select", "options": [null, "Everest", "K2", "Kangchenjunga","Lhotse", "Makalu", "Cho Oyu", "Dhaulagiri I", "Manaslu", "Nanga Parbat", "Annapurna I", "Gasherbrum I", "Broad Peak", "Gasherbrum II", "Shishapangma"]}
+      "bind": {"input": "select", "options": [null, "Everest", "K2", "Kangchenjunga","Lhotse", "Makalu", "Cho Oyu", "Dhaulagiri I", "Manaslu", "Nanga Parbat", "Annapurna I", "Gasherbrum I", "Broad Peak", "Gasherbrum II", "Shishapangma"], "name": "Mountain: "}
     }
   ],
-  "mark": "square",
+  "mark": {"type": "square", "size": 150},
   "encoding": {
     "x": {"field": "Difficulty", "type": "quantitative"},
     "y": {"title": "Duration of expedition (Days)", "field": "Duration_of_expedition (days)", "type": "quantitative", "axis": {"tickCount":6}, "scale": {"type":"linear", "domain": [35,65]}},
     "color": {
-      "condition": {"title": "Mountain", "param": "Mountain", "field": "Mountain", "type":"nominal"},
+      "condition": {"title": "Mountain", "param": "Peak", "field": "Mountain", "type":"nominal"},
       "value": "grey"
     }, 
     "tooltip": [{"field": "Mountain", "type": "nominal"}, {"field": "Difficulty", "type": "quantitative"}, {"title": "Days to summit", "field": "Duration_of_expedition (days)", "type": "quantitative"}]
