@@ -80,8 +80,21 @@
           <div id="vis4" class="vis-container"></div>
       </div>
     </div>  
+<br>
+   
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description">
+            <h2>Duration and Difficulty</h2>
+            <p>its hard and long</p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis5" class="vis-container"></div>
+      </div>
+    </div>  
 
-    
+        
 
   </div> <!-- end page -->
    
@@ -90,6 +103,7 @@
   var specVis2 = "js/choropleth_map.vg.json";
   var specVis3 = "js/cost_graph.vg.json";
   var specVis4 = "js/death_rate.vg.json";
+  var specVis5 = "js/duration_difficulty.vg.json";
   vegaEmbed('#vis1', specVis1, {"actions": false});
   
   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
@@ -101,6 +115,10 @@
   }).catch(console.error);
   
   vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
